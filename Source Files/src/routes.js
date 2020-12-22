@@ -5,54 +5,56 @@ import { Redirect } from "react-router-dom";
 import { DefaultLayout } from "./layouts";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
-import UserProfileLite from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
-import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
-import BlogPosts from "./views/BlogPosts";
+import Dashboard from "./views/Dashboard";
+import UserProfileLite from "./views/AdminList";
+import Errors from "./views/Posts";
+import BlockedList from "./views/BlockedList";
+import UserList from "./views/UserList";
+import ReportTable from "./views/Reports";
+import MatchedCouples from "./views/MatchedCouples";
+import AdminList from "./views/AdminList";
+import Posts from "./views/Posts";
 
 export default [
   {
     path: "/",
     exact: true,
     layout: DefaultLayout,
-    component: () => <Redirect to="/blog-overview" />
+    component: () => <Redirect to="/dashboard" />
   },
   {
-    path: "/blog-overview",
+    path: "/dashboard",
     layout: DefaultLayout,
-    component: BlogOverview
+    component: Dashboard
   },
   {
-    path: "/user-profile-lite",
+    path: "/user-list",
     layout: DefaultLayout,
-    component: UserProfileLite
+    component: UserList
   },
   {
-    path: "/add-new-post",
+    path: "/blocked-user-list",
     layout: DefaultLayout,
-    component: AddNewPost
+    component: BlockedList
   },
   {
-    path: "/errors",
+    path: "/reports",
     layout: DefaultLayout,
-    component: Errors
+    component: ReportTable
   },
   {
-    path: "/components-overview",
+    path: "/matched-couples",
     layout: DefaultLayout,
-    component: ComponentsOverview
+    component: MatchedCouples
   },
   {
-    path: "/tables",
+    path: "/admin-list",
     layout: DefaultLayout,
-    component: Tables
+    component: AdminList
   },
   {
-    path: "/blog-posts",
+    path: "/posts",
     layout: DefaultLayout,
-    component: BlogPosts
+    component: Posts
   }
 ];
